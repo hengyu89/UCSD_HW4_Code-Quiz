@@ -26,7 +26,7 @@ var clearButton = document.querySelector('.reset-score');   // 4th page: clear a
 var timerCount;             // Time left
 var questionLeft;           // # of questions in Quiz
 var questionScore;          // credit of each question
-var totalScore = 100;       // Current score (100 initially)
+var totalScore;       // Current score (100 initially)
 var scoreboard = [];   // All users data.
 var currentUser = {         // current users data
     initial: "",
@@ -42,13 +42,17 @@ var questionSet = [
     {Q: "This is question 6.",A1:"Answer 1",A2:"Answer 2(correct)",A3:"Answer 3",A4:"Answer 4",Correct:2},
     {Q: "This is question 7.",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3(correct)",A4:"Answer 4",Correct:3}
 ];
-var currentQuestionSet = questionSet;
+var currentQuestionSet;
 
+function resetValues() {
+    currentQuestionSet = [...questionSet];
+}
 
 function init() {
     var storedScoreboard = JSON.parse(localStorage.getItem("Scoreboard"));
     if(storedScoreboard !== null) {
         scoreboard = storedScoreboard;
+        totalScore = 100;
     }
 }
 
@@ -57,7 +61,7 @@ function startQuiz() {
     // set timer and # of questions and each questions' credit
     timerCount = 60;
     questionLeft = 5;                           // Number of questions this quiz  have.
-    questionScore = questionLeft/totalScore;    // how many credit each question worth
+    questionScore = totalScore/questionLeft;    // how many credit each question worth
     resultArea.hidden = true;
     // turn to question page right after click the start
     chooseQuestion();
@@ -98,9 +102,11 @@ function nextQuestion(event) {
         questionPage.hidden = false;    // Go to question page
         summaryPage.hidden = true;
         resultArea.hidden = false;      // check correction of previous one
+        totalScore = totalScore - questionScore;
         checkCorrect.textContent = "Wrong..."
         chooseQuestion();
     } else {
+        totalScore = totalScore - questionScore;
         scoreDisplay.textContent = totalScore;
         questionPage.hidden = true;
         summaryPage.hidden = false;     // Go to summary page
@@ -133,7 +139,6 @@ function chooseQuestion() {
     var index = Math.floor(Math.random() * currentQuestionSet.length);
     var answerSet = [currentQuestionSet[index].A1, currentQuestionSet[index].A2,currentQuestionSet[index].A3, currentQuestionSet[index].A4];
     var correctIndex = currentQuestionSet[index].Correct - 1;
-    console.log(correctIndex)
     document.querySelector(".question-title").textContent = currentQuestionSet[index].Q;
     document.querySelector(".answer-area").innerHTML = "";
     for (var i = 0; i < 4; i++) {
@@ -150,6 +155,7 @@ function chooseQuestion() {
             document.querySelector(".qb"+i).addEventListener("click", nextQuestion);
         }
     }
+    console.log(totalScore);
     currentQuestionSet.splice(index,1);
 }
 
@@ -221,6 +227,8 @@ function goBack() {
     summaryPage.hidden = true;
     scorePage.hidden = true;
     init();
+    resetValues();
+    currentQuestionSet = [...questionSet];
 }
 
 function clearScoreboard() {
@@ -239,4 +247,5 @@ initialButton.addEventListener("click", toScoreboard);
 goBackButton.addEventListener("click", goBack);
 clearButton.addEventListener("click", clearScoreboard);
 
+resetValues();
 init();
