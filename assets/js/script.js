@@ -52,7 +52,7 @@ function init() {
     var storedScoreboard = JSON.parse(localStorage.getItem("Scoreboard"));
     if(storedScoreboard !== null) {
         scoreboard = storedScoreboard;
-        totalScore = 100;
+        totalScore = 0;
     }
 }
 
@@ -61,7 +61,7 @@ function startQuiz() {
     // set timer and # of questions and each questions' credit
     timerCount = 60;
     questionLeft = 5;                           // Number of questions this quiz  have.
-    questionScore = totalScore/questionLeft;    // how many credit each question worth
+    questionScore = 100/questionLeft;    // how many credit each question worth
     resultArea.hidden = true;
     // turn to question page right after click the start
     chooseQuestion();
@@ -102,11 +102,9 @@ function nextQuestion(event) {
         questionPage.hidden = false;    // Go to question page
         summaryPage.hidden = true;
         resultArea.hidden = false;      // check correction of previous one
-        totalScore = totalScore - questionScore;
         checkCorrect.textContent = "Wrong..."
         chooseQuestion();
     } else {
-        totalScore = totalScore - questionScore;
         scoreDisplay.textContent = totalScore;
         questionPage.hidden = true;
         summaryPage.hidden = false;     // Go to summary page
@@ -123,9 +121,11 @@ function nextCorrectQuestion(event) {
         questionPage.hidden = false;    // Go to question page
         summaryPage.hidden = true;
         resultArea.hidden = false;      // check correction of previous one
+        totalScore = totalScore + questionScore;
         checkCorrect.textContent = "Correct!";
         chooseQuestion();
     } else {
+        totalScore = totalScore + questionScore;
         scoreDisplay.textContent = totalScore;
         questionPage.hidden = true;
         summaryPage.hidden = false;     // Go to summary page
