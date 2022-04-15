@@ -91,6 +91,10 @@ input,
     margin: auto 5px;
 }
 
+.score-page {
+    width: 100%;
+}
+
 #score-list{
     text-align: left;
     list-style: none;
@@ -104,5 +108,9 @@ input,
 
 .odd-list {
     background-color: var(--lightpurple);
+}
+
+.final-button button {
+    margin: 20px 10px 0px;
 }
 
