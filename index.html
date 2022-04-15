@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Code Quiz</title>
+</head>
+<body>
+    <header>
+        <p class = 'header-title'>View Highscores</p>
+        <p class = 'time-count'>Time: <spam class="timer-count">0</spam></p>
+    </header>
+
+    <main>
+        <section class="start-page">
+            <h1 class="start-title">Coding Quiz Challenge</h1>
+            <p class="start-description">Try to answer the following code-related questions with the time limit. 
+                Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button type="button" class="start-quiz">Start Quiz</button>
+        </section>
+
+        <section class="question-page">
+            <h1 class="question-title">Arrays in Javascript can be used to store _____.</h1>
+            <div class="answer-area">
+                <button class="question-button">1. numbers and strings</button>
+                <button class="question-button">2. other arrays</button>
+                <button class="question-button">3. booleans</button>
+                <button class="question-button">4. all of the above</button>
+            </div>
+            <div class="result-area">
+                <h2 class="result">Correct!</h2>
+            </div>
+        </section>
+
+        <section class="summary-page">
+            <h1>All done!</h1>
+            <p>Your final score is <spam class="total-score">0</spam>.</p>
+            <div class="initialInput-area">
+                <p>Enter initials:</p>
+                <input type="text" placeholder="Enter initials" name="initial" id="initial"/>
+                <button class="submit-score">Submit</button>
+            </div>
+        </section>
+
+        <section class="score-page">
+            <h1>Scoreboard</h1>
+            <ol id="score-list"></ol>
+        </section>
+    </main>
+    
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

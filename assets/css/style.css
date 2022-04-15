@@ -1,0 +1,108 @@
+:root {
+    --purple: #a262ad;
+    --white: #f6f6f6;
+    --lightgray: lightgray;
+    --lightpurple: plum;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--purple);
+}
+
+header p {
+    margin: 0;
+    font-weight: bold;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    margin: 10vh 32vw;
+    text-align: center;
+}
+
+button {
+    height: 10%;
+    margin-top: 20px;
+    background-color: var(--purple);
+    border-radius: 5px;
+    color: var(--white);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--white);
+    color: var(--purple);
+    transition: background-color 0.5s ease;
+}
+
+.question-title {
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+}
+
+.answer-area {
+    margin: 20px 0;
+}
+
+.answer-area button {
+    display: block;
+    margin: 5px;
+    padding: 1px 10px;
+
+}
+
+.summary-page {
+    text-align: left;
+}
+
+.result-area .result {
+    border-top: 2px  solid var(--lightgray);
+    padding-top: 5px;
+    text-align: left;
+    color: var(--lightgray);
+    font-weight: bold;
+}
+
+.initialInput-area {
+    display: flex;
+}
+
+input,
+.submit-score {
+    margin: auto 5px;
+}
+
+#score-list{
+    text-align: left;
+    list-style: none;
+    padding-left: 0;
+}
+
+#score-list li {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.odd-list {
+    background-color: var(--lightpurple);
+}
+
