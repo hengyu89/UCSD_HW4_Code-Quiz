@@ -53,6 +53,8 @@ function init() {
     if(storedScoreboard !== null) {
         scoreboard = storedScoreboard;
         totalScore = 0;
+    } else {
+        totalScore = 0;
     }
 }
 
