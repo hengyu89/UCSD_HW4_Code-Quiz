@@ -22,6 +22,8 @@ SO THAT I can gauge my progress compared to my peers
 
 * General the time limit is "60" seconds, if the user ran out of time, the quiz will stop and turn to the summary page immediately with the current score they earned.
 
+* Also, if you choose a wrong answer, the time left will take 10 seconds off.
+
 * In the summary page, you could see your score, and store it to the Scoreboard. Where you are able to see your rank list at the end. If you leave the blank empty, the name will automatically store as "anonymity". Left-Click the "Submit" button to turn to Scoreboard page.
 
 * In the Scoreboard page, you could see all the rank with top-5 scores and their users' initials (or Name). Click the "Go Back" to start over, turn back to "Welcome" page. Click the Clear Scoreboard to remove all ranks on the Scoreboard (Empty it!)

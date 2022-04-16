@@ -52,6 +52,11 @@ button:hover{
     transition: background-color 0.5s ease;
 }
 
+input,
+.submit-score {
+    margin: auto 5px;
+}
+
 .question-title {
     font-size: 1.5em;
     text-align: left;
@@ -84,11 +89,6 @@ button:hover{
 
 .initialInput-area {
     display: flex;
-}
-
-input,
-.submit-score {
-    margin: auto 5px;
 }
 
 .score-page {

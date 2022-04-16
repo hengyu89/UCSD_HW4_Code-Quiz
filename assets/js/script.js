@@ -104,6 +104,7 @@ function nextQuestion(event) {
         questionPage.hidden = false;    // Go to question page
         summaryPage.hidden = true;
         resultArea.hidden = false;      // check correction of previous one
+        timerCount = timerCount - 10;
         checkCorrect.textContent = "Wrong..."
         chooseQuestion();
     } else {
