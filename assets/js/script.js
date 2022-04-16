@@ -34,13 +34,13 @@ var currentUser = {         // current users data
 };
 var correctSign = false;
 var questionSet = [
-    {Q: "This is question 1.",A1:"Answer 1",A2:"Answer 2(correct)",A3:"Answer 3",A4:"Answer 4",Correct:2},
-    {Q: "This is question 2.",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3",A4:"Answer 4(correct)",Correct:4},
-    {Q: "This is question 3.",A1:"Answer 1(correct)",A2:"Answer 2",A3:"Answer 3",A4:"Answer 4",Correct:1},
-    {Q: "This is question 4.",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3(correct)",A4:"Answer 4",Correct:3},
-    {Q: "This is question 5.",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3",A4:"Answer 4(correct)",Correct:4},
-    {Q: "This is question 6.",A1:"Answer 1",A2:"Answer 2(correct)",A3:"Answer 3",A4:"Answer 4",Correct:2},
-    {Q: "This is question 7.",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3(correct)",A4:"Answer 4",Correct:3}
+    {Q: "1 + 7 = ___.",A1:"6",A2:"8",A3:"9",A4:"7",Correct:2},
+    {Q: "70 * 100 = ___.",A1:"700",A2:"70",A3:"70000",A4:"7000",Correct:4},
+    {Q: "Today is 3-12, 'yesterday' is: ___.",A1:"3-11",A2:"3-12",A3:"3-13",A4:"3-10",Correct:1},
+    {Q: "If you wake up at 7:30, and need to take 14 mins to drive to School, then will you brush your teeth?",A1:"I prefer to drink tea.",A2:"What if I sleep early?",A3:"Of course, for health.",A4:"I'll wake up early.",Correct:3},
+    {Q: "If you have a pen and an apple, then _____.",A1:"I have an apple and a pen.",A2:"I'm hungry.",A3:"Do you like apple?",A4:"Apple-pen!",Correct:4},
+    {Q: "____ Do you wanna build a snowman?",A1:"Let it go.",A2:"Elsa!",A3:"Bazinga!",A4:"Woooooooo!",Correct:2},
+    {Q: "I don't know what else questions I could create,so: ",A1:"Answer 1",A2:"Answer 2",A3:"Answer 3(correct)",A4:"Answer 4",Correct:3}
 ];
 var currentQuestionSet;
 
@@ -157,7 +157,6 @@ function chooseQuestion() {
             document.querySelector(".qb"+i).addEventListener("click", nextQuestion);
         }
     }
-    console.log(totalScore);
     currentQuestionSet.splice(index,1);
 }
 
@@ -231,6 +230,7 @@ function goBack() {
     init();
     resetValues();
     currentQuestionSet = [...questionSet];
+    timerEl.textContent = 60;
 }
 
 function clearScoreboard() {
