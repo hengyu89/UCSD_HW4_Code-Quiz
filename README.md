@@ -9,10 +9,12 @@ I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 ```
 
+## Link to the Quiz.
+
+* First of All, click to start the Quiz: [Take the Quiz!](https://hengyu89.github.io/UCSD_HW4_Code-Quiz/)
+
 
 ## What I've done
-
-* First of All, the link of the quiz: [Take the Quiz!](https://hengyu89.github.io/UCSD_HW4_Code-Quiz/)
 
 * At the "welcome" page, left-click the "Start Quiz" to start.
 
